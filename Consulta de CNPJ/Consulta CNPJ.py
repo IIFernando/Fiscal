@@ -35,5 +35,5 @@ with open('Consulta.csv' , 'a', newline= '', encoding='ISO-8859-1') as arquivo:
         
         arquivo.write(str('\n'))
         slp(20)
-
+        
 print('Finalizado.')
