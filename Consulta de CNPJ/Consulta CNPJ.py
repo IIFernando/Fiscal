@@ -7,7 +7,7 @@ df = pd.read_excel(input(r'Informe o caminho do arquivo: '), dtype=str)
 
 print('Consultando...')
 
-with open('B_CNPJ.csv' , 'a', newline= '', encoding='UTF-8') as arquivo:
+with open('Consulta.csv' , 'a', newline= '', encoding='ISO-8859-1') as arquivo:
     
     for c in df['CNPJ']:
         
@@ -21,8 +21,18 @@ with open('B_CNPJ.csv' , 'a', newline= '', encoding='UTF-8') as arquivo:
         logradouro = resp['logradouro']
         numero = resp['numero']
         tipo = resp['tipo']
+        email = resp['email']
+        situacao = resp['situacao']
+        bairro = resp['bairro']
+        municipio = resp['municipio']
+        abertura = resp['abertura']
+        atividade = resp['atividade_principal']
+        status = resp['status']
+        capital = resp['capital_social']
         
-        arquivo.write(c + '_' + str(cep) + '_' + str(tipo) + '_' + str(nome) + '_' + str(logradouro) + '_' + str(numero))
+        arquivo.write(c + '_' + str(nome) + '_' + str(tipo) + '_' + str(cep) + '_' + str(logradouro) + '_' + str(numero) + '_' + str(bairro) + '_' + str(municipio) + '_' + str(situacao) + '_' + str(email)
+                       + '_' + str(abertura) + '_' + str(atividade) + '_' + str(status) + '_' + str(capital))
+        
         arquivo.write(str('\n'))
         slp(20)
 
